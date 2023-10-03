@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./components/style.css" />
+    <title>Nigel's Weather Channel</title>
+  </head>
+  <body>
+    <!-- Website logo and city search section -->
+    <header>
+      <section class="section-one">
+        <h1 class="page-logo">Nigel's Weather Channel</h1>
+      </section>
+    </header>
+
+    <section class="section-two">
+      <input type="text" placeholder="Search City:" id="search-input" />
+      <button class="button" id="search-button">Search</button>
+      <h2 id="search-history">Search History:</h2>
+      <ul id="history-results"></ul>
+    </section>
+
+    <!-- Start of my main weather display section -->
+    <section class="section-three">
+      <h1 id="day-1">
+        Day 1
+        <!-- Script that adds the current day of the week -->
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            function displayDow(offset) {
+              const now = new Date();
+              let day = now.getDay() + offset;
+
+              if (day > 6) {
+                day -= 7;
+              }
+              if (offset >= 0 && offset <= 4) {
+                const dow = document.getElementById("day-" + (offset + 1));
+                const daysOfWeek = [
+                  "Sunday",
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                ];
+                const weekday = daysOfWeek[day];
+
+                if (dow) {
+                  // Check if the element exists before setting innerHTML
+                  dow.innerHTML = weekday;
+                } else {
+                  console.error(
+                    "Element with ID 'day-" + (offset + 1) + "' not found."
+                  );
+                }
+              }
+            }
+
+            displayDow(0);
+            displayDow(1);
+            displayDow(2);
+            displayDow(3);
+            displayDow(4);
+            displayDow(5);
+            // Add more calls to displayDow for other days as needed.
+          });
+        </script>
+      </h1>
+      <p class="city" id="city-name"><b>City Name</b></p>
+      <a href="https://openweathermap.org/img/wn/01d.png">
+        <img
+          src="https://openweathermap.org/img/wn/01d.png"
+          alt="weathericon"
+          id="weather-icon"
+        />
+      </a>
+      <p id="temp">Temperature:</p>
+      <p id="humid">Humity:</p>
+      <p id="wind">Wind:</p>
+    </section>
+    <!-- Start of my forecast for 7 days -->
+    <section class="section-four">
+      <div class="day2">
+        <h2 id="day-2">Day 2</h2>
+        <a href="https://openweathermap.org/img/wn/01d.png">
+          <img
+            src="https://openweathermap.org/img/wn/01d.png"
+            alt="weather-icon2"
+            id="weather-icon2"
+          />
+        </a>
+        <p id="temp2">Temperature:</p>
+        <p id="humid2">Humidity:</p>
+        <p id="wind2">Wind:</p>
+      </div>
+
+      <div class="day3">
+        <h2 id="day-3">Day 3</h2>
+        <a href="https://openweathermap.org/img/wn/01d.png">
+          <img
+            src="https://openweathermap.org/img/wn/01d.png"
+            alt="weather-icon3"
+            id="weather-icon3"
+          />
+        </a>
+        <p id="temp3">Temperature:</p>
+        <p id="humid3">Humidity:</p>
+        <p id="wind3">Wind:</p>
+      </div>
+    </section>
+
+    <section class="section-five">
+      <div class="day4">
+        <h2 id="day-4">Day 4</h2>
+        <a href="https://openweathermap.org/img/wn/01d.png">
+          <img
+            src="https://openweathermap.org/img/wn/01d.png"
+            alt="weather-icon4"
+            id="weather-icon4"
+          />
+        </a>
+        <p id="temp4">Temperature:</p>
+        <p id="humid4">Humidity:</p>
+        <p id="wind4">Wind:</p>
+      </div>
+
+      <div class="day5">
+        <h2 id="day-5">Day 5</h2>
+        <a href="https://openweathermap.org/img/wn/01d.png">
+          <img
+            src="https://openweathermap.org/img/wn/01d.png"
+            alt="weather-icon5"
+            id="weather-icon5"
+          />
+        </a>
+        <p id="temp5">Temperature:</p>
+        <p id="humid5">Humidity:</p>
+        <p id="wind5">Wind:</p>
+      </div>
+    </section>
+    <script src="./components/script.js"></script>
+  </body>
+</html>

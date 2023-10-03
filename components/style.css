@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    font-size: 18px;
+    line-height: 1.5;
+    background-image: url(../assets/Iceland.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+header {
+    background-color: rgba(0, 0, 0, .6);
+    color: white;
+    width: 85%;
+    text-align: center;
+    margin: auto;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.section-three {
+    color: white;
+    background-color: rgba(0, 0, 0, .6);
+    margin: auto;
+    text-align: center;
+    width: 81%;
+    border-radius: 25px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+.section-four, .section-five {
+    display: flex;
+}
+
+.day2, .day3, .day4, .day5 {
+    margin: auto;
+    text-align: center;
+    padding: 1em;
+    border-radius: 25px;
+    display: flexbox;
+    width: 30%;
+    background-color: rgba(0, 0, 0, .6);
+    color: white;
+    border: 1px solid black;
+    margin-bottom: 1em;
+}
+
+@media (max-width:425px) {
+    .section-four, .section-five {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .day2, .day3, .day4, .day5 {
+        width: 60%;
+    }
+    
+}
